@@ -26,8 +26,8 @@ numpy==1.18.5
 oauthlib==3.1.0
 olefile==0.46
 opt-einsum==3.3.0
-pandas @ file:///C:/ci/pandas_1598371563714/work
-Pillow @ file:///C:/ci/pillow_1594298230227/work
+pandas==1.1.2
+Pillow==7.2.0
 protobuf==3.13.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
