@@ -1,0 +1,24 @@
+{% extends 'base/base.html'%}
+{% block title %} Covid Spotter {% endblock %}
+
+{% block content %}
+  <div id="main-area">
+  <div id="form-user">
+    <p class="h2 center">Covid Spotter</p>
+    <p class="h3 center">by Carol & Thomas</p>
+    <br>
+    <p class="h5 center">Una eina d'Intel·ligència Artificial per identificar pacients susceptibles de patir COVID-19 a partir d'imatges de radiografia.</p>
+    <p class="h3 center">Fet per Carolina Buil García i Thomas González Saito, alumnes del Sagrat Cor, ...</p>
+    <br><br>
+    <p><b>Puja la teva imatge i la IA et donarà una resposta en segons:</b></p>
+
+    <form action="diagnose/" method="POST" enctype="multipart/form-data">
+        Imatge:
+        <br><br>
+        <input type="file" id="x_ray" name="x_ray" accept="image/png, image/jpeg, image/jpg">
+        <br>
+        <input type="submit" name="submit" value="Envia">
+    </form>
+  </div>
+  </div>
+{% endblock %}

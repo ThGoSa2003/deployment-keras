@@ -1,0 +1,134 @@
+/* IDs*/
+
+#main-area{
+	/*width:90%;*/
+	/*border:2px solid #9b9b9b; */
+    padding:1.5em;
+    padding-right:.5em;
+    padding-left:.5em;
+  	/*background-color: #292929;*/
+  	/*color:white;*/
+  	/*height:50em;*/
+  	margin-left:  auto;
+  	margin-right: auto;
+  	margin-top: 1em;
+  	margin-bottom: 1em;
+}
+
+#form-user{
+	width:49%;
+  /* display:inline-block;*/
+	/*float: left;*/
+	font-size:0.9em;
+	color:#383838;
+  min-height:20rem;
+  padding-right:1.5em; 
+  padding-left:.5em;
+}
+
+#form-user input{
+	display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  background-clip: padding-box;
+  border: 1px solid #d1d3e2;
+  border-radius: .15rem;
+}
+
+#form-user .margin-bottom{
+  color: #6e707e;
+  background-color: #f9f9f9;
+}
+
+#main-map{
+  width:49%;
+  border:2px solid #000;
+  height:30rem;
+  max-height:60%; 
+  /*display:inline-block;*/
+  /*float:left;*/
+/*  padding: 10%;*/
+/*  padding-top: 1px;*/
+/*  background-color: #F9F9F9;
+  color:white;*/
+}
+
+#chargers-box{
+  width:49%;
+  border:2px solid #FFF;
+  background-color: #000000;
+  color: white;
+  padding:10px;
+  display:inline-block;
+}
+
+
+/* We write it as class for DRY purpose */
+
+.instruction-list{
+  list-style-type: none;
+  padding: 0;
+  border-top: 1px solid #eee;
+  max-height:30rem;
+  overflow-y:scroll;
+  margin-bottom:0;
+}
+
+
+.instruction-list li{
+  padding-left:1em;
+  border-bottom: 1px solid #eee;
+  padding-bottom:0.3em;
+  padding-top: 0.25em;
+  /*font-size:0.9em;*/
+}
+
+
+/* Classes */
+
+.red{
+	color:red;
+}
+
+.margin-bottom{
+	margin-bottom:1em;
+}
+
+.h2{
+	font-size:1.5em;
+	font-style:bold;
+	font-weight:700;
+}
+
+.h3{
+  font-size:1.25em;
+  font-style:bold;
+  font-weight:500;
+}
+
+.center{
+	text-align: center;
+}
+
+.separator{
+  width:100%;
+  padding:1rem;
+}
+
+.plot{
+  width:100%;
+}
+
+.border-left{
+  border-radius: .5em !important;
+}
+
+
+@media only screen and (max-width: 1500px) {
+    #form-user{
+        width:100%;
+    }
+    #main-map{
+        width:100%;
+    }
+}
