@@ -78,7 +78,7 @@ def predict():
         # si p > threshold -> clasificación de tipos
         pneu_type = list(np.round(model_type.predict(np.array([img_array]))[0].flatten()*100, decimals=2))
 
-    return render_template('pred.html', data={"name":"imagtge", "binary": p,
+    return render_template('pred.html', data={"name":"imatge", "binary": p,
                                               "dict_probs": {k:v for k, v in zip(type_labels.values(), pneu_type)}})
 
 
