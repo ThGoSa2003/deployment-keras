@@ -35,30 +35,13 @@ model_type  = keras.models.Model(inputs = vgg.input, outputs = outputs)
 modelbinary = keras.models.load_model("minimodel_p.h5")
 outputs_b   = modelbinary(vgg.output)
 model_prob  = keras.models.Model(inputs = vgg.input, outputs = outputs_b) 
-# ## Fixem els paràmetres preentrenats per què no es modifiquin durant l'entrenament.
-# for layer in vgg.layers:
-#   layer.trainable = False
-# ## Aplanem els valors de sortida de la xarxa preentrenada per què passin de
-# ## tenir dimensions 7x7x512 a 25088x1.
-# inputs = keras.Input(shape=(longitud, altura, 3))
-# x = layers.experimental.preprocessing.RandomFlip("horizontal")(inputs)
-# x = layers.experimental.preprocessing.RandomRotation(0.1)(x)
-# x = layers.experimental.preprocessing.RandomZoom(0.1)(x)
-# x = layers.experimental.preprocessing.Rescaling(1./255)(x)
-# x = vgg(x)
-# x = layers.Flatten()(x)
-# x = layers.Dense(256, activation="relu")(x)
-# predicció = layers.Dense(num_classes, activation="softmax")(x)
-# model_prob = keras.Model(inputs=inputs, outputs=predicció)
-#model_prob  = keras.models.load_weights("model_p.h5")
-
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
+  
 @app.route('/diagnose/', methods=["GET", "POST"]) 
 def predict():
     if request.method == 'POST':
@@ -71,6 +54,8 @@ def predict():
             pil_image = Image.open(BytesIO(response)).convert("RGB").resize((224,224))
         img_array = np.array(pil_image)[:, :, :3]
         print(img_array.shape)
+        datagen = keras.preprocessing.image.ImageDataGenerator(rescale=1. / 255)
+        img_array = datagen.flow(img_array)
         # convertir imagen a np.array
         # predecimos
         p = model_prob.predict(np.array([img_array]))[0, 1]
