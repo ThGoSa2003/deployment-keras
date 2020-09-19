@@ -54,8 +54,8 @@ def predict():
             pil_image = Image.open(BytesIO(response)).convert("RGB").resize((224,224))
         img_array = np.array(pil_image)[:, :, :3]
         print(img_array.shape)
-        datagen = keras.preprocessing.image.ImageDataGenerator(rescale=1. / 255)
-        img_array = datagen.flow(img_array)
+        #datagen = keras.preprocessing.image.ImageDataGenerator(rescale=1. / 255)
+        #img_array = datagen.flow(img_array)
         # convertir imagen a np.array
         # predecimos
         p = model_prob.predict(np.array([img_array]))[0, 1]
