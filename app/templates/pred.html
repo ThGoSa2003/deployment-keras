@@ -3,25 +3,25 @@
 {% block content %}
 <div id="main-area" style="display: flex;">
   <div id="form-user" class="bring-to-top">
-    <p class="h2">Covid Spotter: Resultat</p>
+    <p class="h2">Covid Spotter: Resultado</p>
     <br><br>
-    <p class="h3">Inspecció de la imatge: <!--{{ data["name"] }}--></p>
+    <p class="h3">Inspección de la imagen: <!--{{ data["name"] }}--></p>
     <br><br>
-    <p class="h5 center">Tinc COVID-19 ?</p>
+    <p class="h5 center">¿Tengo COVID-19?</p>
     <ul id="summary-list">
       {% if data["binary"] < 50 %}
-        <li>El model creu que <b>estàs sa</b> (prbabilitat menor del 50%).
+        <li>El modelo ha detectado que <b>estás sano</b> (probabilidad menor al 50%).
           <br><br>
-          Concretament, la probabilitat de patir pneumònia segons la nostra IA és de <b>{{data["binary"]}}%</b>. En tot ca, et recomanem que fagis una ullada a la classificació més detallada.</li>
+          Concretamente, la probabilidad de sufrir neumonía según nuestra IA es de <b>{{data["binary"]}}%</b>.</li>
           </ul>
   
       {% else %}
-          <li>El model creu que tens una <b>alta probabilitat d'estar malalt</b>. 
+          <li>El model ha detectado que tens una <b>alta probabilitat de sufrir una pulmonía</b>. 
           <br><br>
-          Concretament, la probabilitat de patir pneumònia segons la nostra IA és de <b>{{data["binary"]}}%</b>. Et recomanem que <b>fagis una ullada a la classificació més detallada</b> per veure quina en pot ser la causa.</li>
+          Concretamente, la probabilidad de sufrir neumonía según nuestra IA es de <b>{{data["binary"]}}%</b>. Te recomendamos que hagas una ojeada a la clasificación más detallada.</li>
           </ul>
           <br>
-          <p class="h5 center">Desglossament de probabilitat per tipus</p>
+          <p class="h5 center">Desglosamiento de la probabilidad por tipos</p>
             <ul id="summary-list">
             {% for cat_name, prob in data["dict_probs"].items() %}
               <li><b>{{cat_name}}</b>: {{prob}} %</li>
