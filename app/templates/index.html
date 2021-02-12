@@ -5,23 +5,23 @@
   <div id="main-area">
   <div id="form-user">
     <p class="h1 center">Covid Spotter</p>
-    <p class="h6 center">Fet per Carolina Buil García i Thomas González Saito</p>
+    <p class="h6 center">Hecho por Carolina Buil García y Thomas González Saito</p>
     <br>
-    <p class="h5 center">Una eina d'Intel·ligència Artificial per identificar pacients susceptibles al COVID-19 a partir d'imatges de radiografia.</p>
+    <p class="h5 center">Una herramienta de Inteligencia Artificial para identificar pacientes susceptibles de padecer COVID-19 a partir de imagenes de radiografías.</p>
     <br>
-    <p>Aquesta és una aplicació creada per dos alumnes de batxillerat de l'escola Sagrat Cor Diputació com a part del nostre treball de recerca. 
-    No és una aplicació creada per professionals, així que preneu els diagnòstics amb precaució. Al pujar la teva radiografia, el nostre model reconeixerà si tens
-    pneumònia o no, i en cas afirmatiu t'enumerarà la probabilitat que aquesta sigui COVID-19 o que sigui una altra pneumònia viral, una de bacterial, una de tipus 
-    desconegut o que no hagi pogut reconèixer la imatge.</p>
+    <p>Esta es una aplicación creada por dos alumnos de bachillerato de la escuela Sagrat Cor Diputació de Barcelona como a parte de nuestro trabajo de investigación. 
+    No es una aplicación creada per profesionales y es un primer prototipo de este tipo de aplicación, así que toma los diagnosticos con precaución. Al subir tu radiografía, 
+    nuestro modelo clasificará la imagen en si se identifica pulmonia o no, y en caso afirmativo enumerará la probabilidad que esta sea COVID-19, otra pneumònia viral,
+    una bacterial, una de tipo desconocido o que no haya podido reconocer la imagen.</p>
     <br>
-    <p><b>¡IMPORTANT!</b> Per una millor predicció et recomanem que la imatge que pugis sigui el mateix arxiu de la radiografia o un escaneig d'aquesta.
-      A més és necessari que la imatge estigui en format ".jpg",".jpeg" o ".png".</p>
+    <p><b>¡IMPORTANTE!</b> Para una mejor predicción te recomendamos que la imagen que subas sea el mismo archivo de la radiografia o un escaneo de esta.
+      Además, es necesario que la imagen sea del formato ".jpg",".jpeg" o ".png".</p>
      
     <br><br>
-    <p><b>Puja la teva imatge i la IA et donarà una resposta en segons:</b></p>
+    <p><b>Sube tu imagen y la IA te dará una respuesta en segundos:</b></p>
 
     <form action="diagnose/" method="POST" enctype="multipart/form-data">
-        Imatge:
+        Imagen:
         <br><br>
         <input type="file" id="x_ray" name="x_ray" accept="image/png, image/jpeg, image/jpg">
         <br>
